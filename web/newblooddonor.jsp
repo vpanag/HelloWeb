@@ -19,10 +19,10 @@
         <h1>Registration New Donor</h1>
         <table border ="0">
             <tbody>
-        <form name="newblooddoner" action="registration" method="POST">
+        <form name="newblooddoner" action="Registration" method="POST">
         
             <tr><td> Kodikos aimodoti</td>
-                <td> <input type="text" name="Kodikos_Aimodoti" value="" /></td>
+                <td> <input type="text" name="Kodikos_Aimodoti" value="c:out ${donner.lastname}" /></td>
             </tr>
             <tr>
             <td>Last Name</td>
