@@ -7,6 +7,8 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -70,13 +72,21 @@ public class Registration extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
         Aimodotes donner = new Aimodotes();
-        donner.setAm(1);
-        donner.setLastName(lastName);
-        
-        
+        request.setCharacterEncoding("UTF-8");
+        donner.setAm(Integer.parseInt(request.getParameter("Kodikos_Aimodoti")));
+        donner.setLastName(request.getParameter("Lastname"));
+        donner.setAddress(request.getParameter("Address"));
+        donner.setBloodType(request.getParameter("omadaaimatos"));
+        donner.setName(request.getParameter("Name"));
+        donner.setPhone(request.getParameter("phonenumber"));
+        donner.setProsforaList(new ArrayList<>());
         dbmanager.createDonner( donner );
+        RequestDispatcher view = request.getRequestDispatcher("displayDonor.jsp");
+        response.setCharacterEncoding("UTF-8");
+        request.setAttribute("donner", donner);
+        view.forward(request, response);
     }
 
     /**

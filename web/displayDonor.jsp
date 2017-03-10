@@ -18,7 +18,7 @@
     
     
     <body>
-        <h1>Registration New Donor</h1>
+        <h1>Display Donor</h1>
         <table border ="0">
             <tbody>
         <form name="newblooddoner" action="Registration" method="POST">
@@ -28,7 +28,7 @@
             </tr>
             <tr>
             <td>Last Name</td>
-                <td><input type="text" name="Lastname"  value="<c:out value="${donner.lastName}" />" /></td>
+                <td><input type="text" name="Lastname" value="<c:out value="${donner.lastName}" />" /></td>
             </tr>
             <tr>
             <td>Name</td>
