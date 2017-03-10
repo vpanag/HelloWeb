@@ -12,7 +12,7 @@
         <title>Doner Card</title>
     </head>
     <body>
-    <center> <h1>Καρτέλα Αιμοδότη</h1> </center>
+    <center> <h1>Καρτέλα του Αιμοδότη</h1> </center>
         
         
         
